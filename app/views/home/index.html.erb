@@ -1,1 +1,10 @@
-<h1 class="text-4xl text-green-700 font-semibold underline">Hello,world</h1>
+<% if user_signed_in? %>
+  <h1>ようこそ、<%= current_user.name %>さん！</h1>
+  <p>これはログイン後のトップページです。</p>
+  <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+<% else %>
+  <h1>Welcome!</h1>
+  <p>ログインすると、もっと機能が使えます。</p>
+  <%= link_to 'ログイン', new_user_session_path %> |
+  <%= link_to '新規登録', new_user_registration_path %>
+<% end %>
