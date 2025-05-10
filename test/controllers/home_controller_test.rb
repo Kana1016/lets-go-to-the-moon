@@ -1,8 +1,8 @@
 require "test_helper"
 
-class RecordsControllerTest < ActionDispatch::IntegrationTest
+class HomeControllerTest < ActionDispatch::IntegrationTest
   test "should get index" do
-    get records_index_url
+    get root_path
     assert_response :success
   end
 end
