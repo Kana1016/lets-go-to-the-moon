@@ -1,15 +1,15 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  jump_time: 1
-  jump_count: 1
-  walk_count: 1
-  recorded_at: 2025-05-15
-  user: one
+#one:
+#  jump_time: 1
+#  jump_count: 1
+#  walk_count: 1
+#  recorded_at: 2025-05-15
+#  user: one
 
-two:
-  jump_time: 1
-  jump_count: 1
-  walk_count: 1
-  recorded_at: 2025-05-15
-  user: two
+#two:
+#  jump_time: 1
+#  jump_count: 1
+#  walk_count: 1
+#  recorded_at: 2025-05-15
+#  user: two
