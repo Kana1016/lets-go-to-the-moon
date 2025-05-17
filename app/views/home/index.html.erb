@@ -1,10 +1,32 @@
-<% if user_signed_in? %>
-  <h1>ようこそ、<%= current_user.name %>さん！</h1>
-  <p>これはログイン後のトップページです。</p>
-  <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
-<% else %>
-  <h1>Welcome!</h1>
-  <p>ログインすると、もっと機能が使えます。</p>
-  <%= link_to 'ログイン', new_user_session_path %> |
-  <%= link_to '新規登録', new_user_registration_path %>
-<% end %>
+<div class="w-full min-h-screen flex justify-center items-center">
+  <div style="max-width: 600px; text-align: center; padding: 20px;">
+    <% if user_signed_in? %>
+      <h1>🚀 Let's Go to the Mooooon!!</h1>
+      <p>🌕 月まであと <strong>〇〇 km</strong>!!</p>
+      <p>🐰 現在 <strong>〇 匹</strong> の仲間がいます</p>
+      <div style="margin-top: 20px;">
+        <%= button_to '本日の記録を行う！', destroy_user_session_path, method: :delete %>
+      </div>
+      <div style="margin-top: 20px;">
+        <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
+      </div>
+
+    <% else %>
+      <h1>🚀 Let's Go to the Mooooon!!</h1>
+      <p style="margin-top: 20px;">
+        このアプリは縄跳びとウォーキングの記録アプリです。<br>
+        1万キロ達成ごとにうさぎを仲間に加え月までめざしましょう!!
+      </p>
+      <p style="margin-top: 20px;">
+        ※このアプリを使用するにはログインが必要になります。<br>
+        下記からログイン、新規登録をお願い致します。
+      </p>
+      <div style="margin-top: 10px;">
+        <%= link_to 'ログイン', new_user_session_path, style: 'margin-right: 10px;' %>
+      </div>
+      <div style="margin-top: 1px;">
+        <%= link_to '新規登録', new_user_registration_path, style: 'margin-right: 10px;' %>
+      </div>
+    <% end %>
+  </div>
+</div>
