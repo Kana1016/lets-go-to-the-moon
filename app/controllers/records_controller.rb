@@ -4,6 +4,14 @@ class RecordsController < ApplicationController
 
   def index
     @records = current_user.records
+
+    @totals = {
+    jump_time:         @records.sum(:jump_time),
+    jump_count:        @records.sum(:jump_count),
+    jump_total_count:  @records.sum(:jump_total_count),
+    walk_count:        @records.sum(:walk_count),
+    total_distance:    @records.sum(:total_distance)
+  }
   end
 
   def new

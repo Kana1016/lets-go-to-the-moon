@@ -3,6 +3,8 @@ class Record < ApplicationRecord
 
   before_save :calculate_total_distance
 
+  enum speed: { slow: 100, normal: 140, fast: 180 }
+
   validates :jump_time, numericality: { only_integer: true }
   validates :jump_count, numericality: { only_integer: true }
   validates :jump_total_count, numericality: { only_integer: true }, allow_nil: true
