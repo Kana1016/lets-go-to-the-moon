@@ -7,7 +7,6 @@ class RecordsController < ApplicationController
 
     @totals = {
     jump_time:         @records.sum(:jump_time),
-    jump_count:        @records.sum(:jump_count),
     jump_total_count:  @records.sum(:jump_total_count),
     walk_count:        @records.sum(:walk_count),
     total_distance:    @records.sum(:total_distance)
@@ -46,7 +45,7 @@ class RecordsController < ApplicationController
   private
 
   def record_params
-    params.require(:record).permit(:jump_time, :jump_count, :jump_total_count, :walk_count, :total_distance, :recorded_at)
+    params.require(:record).permit(:jump_time, :speed, :jump_total_count, :walk_count, :total_distance, :recorded_at)
   end
 
   def set_record
