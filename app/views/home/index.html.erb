@@ -5,7 +5,7 @@
       <p>🌕 月まであと <strong>〇〇 km</strong>!!</p>
       <p>🐰 現在 <strong>〇 匹</strong> の仲間がいます</p>
       <div style="margin-top: 20px;">
-        <%= button_to '本日の記録を行う！', new_record_path %>
+        <%= link_to '本日の記録を行う！', new_record_path %>
       </div>
       <div style="margin-top: 20px;">
         <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>

@@ -3,7 +3,7 @@ class RecordsController < ApplicationController
   before_action :set_record, only: [:show, :edit, :update]
 
   def index
-    @records = current_user.records
+    @records = current_user.records.order(created_at: :desc)
 
     @totals = {
     jump_time:         @records.sum(:jump_time),
@@ -22,6 +22,7 @@ class RecordsController < ApplicationController
     if @record.save
       redirect_to root_path, notice: '記録が保存されました！'
     else
+      Rails.logger.debug "Record save failed: #{@record.errors.full_messages.join(', ')}"
       flash.now[:alert] = '登録に失敗しました'
       render :new, status: :unprocessable_entity
     end
