@@ -1,6 +1,6 @@
 class RecordsController < ApplicationController
   before_action :authenticate_user! # 各アクションが動く前にログインしているかしていないかを判断し、ログインしていなければアクションを動かすことなくログインページが表示されるようする
-  before_action :set_record, only: [:show, :edit, :update]
+  before_action :set_record, only: [ :show, :edit, :update ]
 
   def index
     @records = current_user.records.order(created_at: :desc)
@@ -20,10 +20,9 @@ class RecordsController < ApplicationController
   def create
     @record = current_user.records.build(record_params)
     if @record.save
-      redirect_to root_path, notice: '記録が保存されました！'
+      redirect_to root_path, notice: "記録が保存されました！"
     else
-      Rails.logger.debug "Record save failed: #{@record.errors.full_messages.join(', ')}"
-      flash.now[:alert] = '登録に失敗しました'
+      flash.now[:alert] = "登録に失敗しました"
       render :new, status: :unprocessable_entity
     end
   end
@@ -36,9 +35,9 @@ class RecordsController < ApplicationController
 
   def update
     if @record.update(record_params)
-      redirect_to record_path(@record), notice: '記録を更新しました！'
+      redirect_to record_path(@record), notice: "記録を更新しました！"
     else
-      flash.now[:alert] = '更新に失敗しました'
+      flash.now[:alert] = "更新に失敗しました"
       render :edit, status: :unprocessable_entity
     end
   end
