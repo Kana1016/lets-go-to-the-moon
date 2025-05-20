@@ -26,10 +26,10 @@
           <%= link_to 'トップページ', root_path %>
         </li>
         <li class="p-3">
-          <%= link_to '記録ページ', '#' %>
+          <%= link_to '記録ページ', new_record_path %>
         </li>
         <li class="p-3">
-          <%= link_to '過去の記録一覧', '#' %>
+          <%= link_to '過去の記録一覧', records_path %>
         </li>
         <li class="p-3">
           <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>

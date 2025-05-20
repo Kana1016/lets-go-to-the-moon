@@ -10,13 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_05_14_221309) do
+ActiveRecord::Schema[7.2].define(version: 2025_05_17_054711) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "records", force: :cascade do |t|
     t.integer "jump_time"
-    t.integer "jump_count"
     t.integer "jump_total_count"
     t.integer "walk_count"
     t.integer "total_distance"
@@ -24,6 +23,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_05_14_221309) do
     t.bigint "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "speed", default: 1
     t.index ["user_id"], name: "index_records_on_user_id"
   end
 

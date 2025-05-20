@@ -6,3 +6,6 @@ import { application } from "./application"
 
 import HelloController from "./hello_controller"
 application.register("hello", HelloController)
+
+import RecordFormController from "./record_form_controller"
+application.register("record-form", RecordFormController)

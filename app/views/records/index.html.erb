@@ -1,0 +1,39 @@
+<h1 class="text-2xl font-bold mb-4">記録一覧</h1>
+
+<%= link_to '新しい記録を作成', new_record_path, class: "bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600" %>
+
+<table class="min-w-full mt-4 border border-gray-300">
+  <thead class="bg-gray-100">
+    <tr>
+      <th class="border px-4 py-2">日付</th>
+      <th class="border px-4 py-2">ジャンプ時間</th>
+      <th class="border px-4 py-2">累計ジャンプ回数</th>
+      <th class="border px-4 py-2">歩数</th>
+      <th class="border px-4 py-2">合計距離</th>
+      <th class="border px-4 py-2">操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @records.each do |record| %>
+      <tr>
+        <td class="border px-4 py-2 text-center"><%= record.recorded_at %></td>
+        <td class="border px-4 py-2 text-center"><%= record.jump_time %> 分</td>
+        <td class="border px-4 py-2 text-center"><%= record.jump_total_count %> 回</td>
+        <td class="border px-4 py-2 text-center"><%= record.walk_count %> 歩</td>
+        <td class="border px-4 py-2 text-center"><%= record.total_distance %> km</td>
+        <td class="border px-4 py-2 space-x-2">
+          <%= link_to '詳細', record_path(record), class: "text-blue-600 hover:underline" %>
+          <%= link_to '編集', edit_record_path(record), class: "text-green-600 hover:underline" %>
+        </td>
+      </tr>
+    <% end %>
+    <tr style="font-weight: bold;">
+      <td class="border px-4 py-2 text-center bg-gray-100">合計</td>
+      <td class="border px-4 py-2 text-center bg-gray-100"><%= @totals[:jump_time] %></td>
+      <td class="border px-4 py-2 text-center bg-gray-100"><%= @totals[:jump_total_count] %></td>
+      <td class="border px-4 py-2 text-center bg-gray-100"><%= @totals[:walk_count] %></td>
+      <td class="border px-4 py-2 text-center bg-gray-100"><%= @totals[:total_distance] %></td>
+      <td class="border px-4 py-2 text-center bg-gray-100"></td>
+    </tr>
+  </tbody>
+</table>
