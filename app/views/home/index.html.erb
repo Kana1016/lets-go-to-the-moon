@@ -2,10 +2,10 @@
   <div style="max-width: 600px; text-align: center; padding: 20px;">
     <% if user_signed_in? %>
       <h1>🚀 Let's Go to the Mooooon!!</h1>
-      <p>🌕 月まであと <strong>〇〇 km</strong>!!</p>
-      <p>🐰 現在 <strong>〇 匹</strong> の仲間がいます</p>
+      <p>🌕 月まであと <strong> <%= number_with_delimiter(current_user.remaining_distance.floor) %> km</strong>!!</p>
+      <p>🐰 現在 <strong> <%= current_user.rabbit_count %> 匹</strong> の仲間がいます</p>
       <div style="margin-top: 20px;">
-        <%= link_to '本日の記録を行う！', new_record_path %>
+        <%= link_to '本日の記録を行う！', new_record_path, class: "class: bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md" %>
       </div>
       <div style="margin-top: 20px;">
         <%= button_to 'ログアウト', destroy_user_session_path, method: :delete %>
