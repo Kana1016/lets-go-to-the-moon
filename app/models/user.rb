@@ -16,7 +16,7 @@ class User < ApplicationRecord
   end
 
   def remaining_distance # 残りの距離
-    [GOAL_DISTANCE - total_distance, 0].max # 配列にして、最大数を返すようにしている。（負の数値が表示されないようにするため。
+    [ GOAL_DISTANCE - total_distance, 0 ].max # 配列にして、最大数を返すようにしている。（負の数値が表示されないようにするため。
   end
 
   def rabbit_count
