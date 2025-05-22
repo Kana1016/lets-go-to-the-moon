@@ -42,6 +42,12 @@ class RecordsController < ApplicationController
     end
   end
 
+  def destroy
+    record = current_user.records.find(params[:id])
+    record.destroy!
+    redirect_to records_path, notice: "削除しました", status: :see_other
+  end
+
   private
 
   def record_params
