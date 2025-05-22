@@ -1,0 +1,51 @@
+<h1 class="text-2xl font-bold mb-6 text-center">記録の詳細</h1>
+
+<div class="max-w-xl mx-auto space-y-6">
+  <div>
+    <label class="block text-sm font-medium text-gray-700">記録日</label>
+    <p class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm p-2 bg-gray-100">
+      <%= @record.recorded_at %>
+    </p>
+  </div>
+
+  <div>
+    <label class="block text-sm font-medium text-gray-700">縄跳び時間（分）</label>
+    <p class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm p-2 bg-gray-100">
+      <%= @record.jump_time %>
+    </p>
+  </div>
+
+  <div>
+    <label class="block text-sm font-medium text-gray-700">1分間当たりの回数</label>
+    <p class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm p-2 bg-gray-100">
+      <%= I18n.t("activerecord.enum.record.speed.#{@record.speed}") %>
+    </p>
+  </div>
+
+  <div>
+    <label class="block text-sm font-medium text-gray-700">累計縄跳び回数</label>
+    <p class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm p-2 bg-gray-100">
+      <%= @record.jump_total_count %>
+    </p>
+  </div>
+
+  <div>
+    <label class="block text-sm font-medium text-gray-700">歩数</label>
+    <p class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm p-2 bg-gray-100">
+      <%= @record.walk_count %>
+    </p>
+  </div>
+
+  <div>
+    <label class="block text-sm font-medium text-gray-700">アプリ内での総移動距離（km）</label>
+    <p class="mt-1 block w-full rounded-md border border-gray-300 shadow-sm p-2 bg-gray-100">
+      <%= @record.total_distance %>
+    </p>
+  </div>
+
+<div class="text-center space-x-4 flex justify-center">
+  <%= link_to "編集", edit_record_path(@record), class: "bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded-md" %>
+
+  <%= button_to "削除", record_path(@record), method: :delete, data: { confirm: "本当に削除しますか？" }, class: "bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-4 rounded-md", form: { class: "inline-block" } %>
+</div>
+</div>
