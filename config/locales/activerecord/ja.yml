@@ -1,0 +1,9 @@
+ja:
+  activerecord:
+    attributes:
+    enum:
+      record:
+        speed:
+          slow: "100step / 分"
+          normal: "140step / 分"
+          fast: "180step / 分"
