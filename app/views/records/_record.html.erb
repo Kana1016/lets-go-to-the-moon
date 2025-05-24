@@ -1,4 +1,5 @@
 <%= form_with model: @record, local: true, class: "max-w-xl mx-auto space-y-6", data: { controller: "record-form" } do |f| %>
+<%= render 'shared/error_messages', object: f.object %>
   <div>
     <%= f.label :recorded_at, "記録日", class: "block text-sm font-medium text-gray-700" %>
     <%= f.date_field :recorded_at, class: "mt-1 block w-full rounded-md border-gray-300 shadow-sm p-2 focus:border-blue-500 focus:ring focus:ring-blue-200 focus:ring-opacity-50" %>
