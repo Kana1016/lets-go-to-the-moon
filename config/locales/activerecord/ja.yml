@@ -1,6 +1,15 @@
 ja:
   activerecord:
+    models:
+      user: "ユーザー"
+      record: "記録"
     attributes:
+      record:
+        recorded_at: "記録日"
+        jump_time: "縄跳び時間（分）"
+        jump_total_count: "累計縄跳び回数"
+        walk_count: "歩数"
+        total_distance: "アプリ内での移動距離（km）"
     enum:
       record:
         speed:
