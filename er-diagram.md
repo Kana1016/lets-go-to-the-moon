@@ -1,5 +1,8 @@
-### ER図
+### ER図（サービス作成前）
 [![Image from Gyazo](https://i.gyazo.com/804712be97085b0fabead007a67f4c0f.png)](https://gyazo.com/804712be97085b0fabead007a67f4c0f)
+
+### ER図（MVP提出時）
+[![Image from Gyazo](https://i.gyazo.com/41efbfd89d82bd28c3f9a36731e7128e.png)](https://gyazo.com/41efbfd89d82bd28c3f9a36731e7128e)
 
 ### 本サービスの概要（700文字以内）
 Let's Go to the Mooooon!! は、縄跳びやウォーキングなどの運動記録を「月までの距離（384,400km）」に向けて積み重ねていく運動記録アプリです。 <br>
